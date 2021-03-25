@@ -14,7 +14,7 @@ function fetch(url){
       .catch(error => {
         $('#loader').hide();
         $('#alert').show();
-    });;
+    });
 }
 
 function render(data){
@@ -27,12 +27,14 @@ function render(data){
 
 }
 
-function find(){
+function find(event){
+    event.preventDefault();
+    
     url=$('#url').val();
+    console.log(url);
     if(url!='')
         fetch(url);
 }   
-
 function wait(){
     $('#loader').hide();
     $('#alert').hide();

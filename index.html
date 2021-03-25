@@ -26,10 +26,10 @@
 
     <div class="container">
         <div class="collapse" id="collapseExample">
-            <form class="mt-3 w-50 m-auto text-center">
+            <form class="mt-3 w-50 m-auto text-center" onsubmit="find(event)">
                 <label for="url" class="font-monospace mb-2">Url of image:</label>
                 <input type="text" class="form-control" id="url"  required>
-                <button type="submit" class="btn btn-outline-primary mt-2" onclick="find()">Find</button>
+                <button type="submit" class="btn btn-outline-primary mt-2">Find</button>
             </form>
             <div class="alert alert-danger mt-2" id="alert">
                 Invalid URL
