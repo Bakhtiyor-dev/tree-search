@@ -1,21 +1,21 @@
 function fetch(url){
     $('#loader').show();
-    axios.get('https://my-api.plantnet.org/v2/identify/all', {
-        params:{
-            'api-key': '2b10HqJuexpyAGFncT0jXVvPzO',
-            'images': url,
-            'organs':'leaf'
-        }
-      })
-      .then(function(res){
-          render(res.data.results[0].species);
-          $('#loader').hide();
-      })
-      .catch(error => {
+    $.get('https://my-api.plantnet.org/v2/identify/all',{
+        'api-key': '2b10HqJuexpyAGFncT0jXVvPzO',
+        'images': url,
+        'organs':'leaf'
+    })
+    .done(function(res){
+        render(res.results[0].species);
         $('#loader').hide();
-        $('#alert').text(error.response.data.error+': '+error.response.data.message);
-        $('#alert').show();
+        $('#alert').hide();
         
+    })
+    .fail(function(error){
+        $('#result').hide();
+        $('#loader').hide();
+        $('#alert').text(error.responseJSON.error+': '+error.responseJSON.message);
+        $('#alert').show();
     });
 }
 
@@ -31,9 +31,7 @@ function render(data){
 
 function find(event){
     event.preventDefault();
-    
     url=$('#url').val();
-    console.log(url);
     if(url!='')
         fetch(url);
 }   
