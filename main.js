@@ -1,10 +1,10 @@
-function fetch(url) {
+function fetchData(url) {
     $('#loader').show();
         $.get('https://my-api.plantnet.org/v2/identify/all', {
-            'api-key': '2b10HqJuexpyAGFncT0jXVvPzO',
+            'api-key': '2b10iZqGaSwbflAY8osOfrFX',
             'images': url,
             'organs': 'leaf'
-        },{cache:false})
+        })
             .done(function (res) {
                 render(res.results[0].species);
                 $('#loader').hide();
@@ -33,7 +33,7 @@ function find(event) {
     event.preventDefault();
     url = $('#url').val();
     if (url != '')
-        fetch(url);
+        fetchData(url);
 }
 function wait() {
     $('#loader').hide();
