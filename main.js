@@ -1,23 +1,23 @@
     function fetch(url){
         $('#loader').show();
         try{
-            $.get('https://www.my-api.plantnet.org/v2/identify/all',{
+            $.get('https://my-api.plantnet.org/v2/identify/all',{
             'api-key': '2b10HqJuexpyAGFncT0jXVvPzO',
             'images': url,
             'organs':'leaf'
-        })
-        .done(function(res){
-            render(res.results[0].species);
-            $('#loader').hide();
-            $('#alert').hide();
-            
-        })
-        .fail(function(error){
-            $('#result').hide();
-            $('#loader').hide();
-            $('#alert').text(error.responseJSON.error+': '+error.responseJSON.message);
-            $('#alert').show();
-        });
+             })
+            .done(function(res){
+                render(res.results[0].species);
+                $('#loader').hide();
+                $('#alert').hide();
+                
+            })
+            .fail(function(error){
+                $('#result').hide();
+                $('#loader').hide();
+                $('#alert').text(error.responseJSON.error+': '+error.responseJSON.message);
+                $('#alert').show();
+            });
         }catch(e){
             $('#alert').text(e);
         }
