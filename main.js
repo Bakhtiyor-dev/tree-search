@@ -1,4 +1,3 @@
-$(function(){
     function fetch(url){
         $('#loader').show();
         $.get('https://www.my-api.plantnet.org/v2/identify/all',{
@@ -41,4 +40,4 @@ $(function(){
         $('#alert').hide();
         $('#result').hide();
     }
-})
+
