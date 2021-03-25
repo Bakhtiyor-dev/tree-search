@@ -13,7 +13,9 @@ function fetch(url){
       })
       .catch(error => {
         $('#loader').hide();
+        $('#alert').text(error.response.data.error+': '+error.response.data.message);
         $('#alert').show();
+        
     });
 }
 
