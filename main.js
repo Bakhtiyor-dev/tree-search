@@ -1,6 +1,7 @@
     function fetch(url){
         $('#loader').show();
-        $.get('https://www.my-api.plantnet.org/v2/identify/all',{
+        try{
+            $.get('https://www.my-api.plantnet.org/v2/identify/all',{
             'api-key': '2b10HqJuexpyAGFncT0jXVvPzO',
             'images': url,
             'organs':'leaf'
@@ -17,6 +18,9 @@
             $('#alert').text(error.responseJSON.error+': '+error.responseJSON.message);
             $('#alert').show();
         });
+        }catch(e){
+            $('#alert').text(e);
+        }
     }
     
     function render(data){
