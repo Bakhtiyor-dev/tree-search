@@ -1,5 +1,6 @@
-# TREE-SEARCH 
-**GET INFORMATION ABOUT TREE BY IMAGE** 
+# TREE-SEARCH
+**GET INFORMATION ABOUT TREE BY IMAGE**
+
 [Demo](https://bakhtiyor-dev.github.io/tree-search/ "Demo")
 ## Screenshots
 ![](https://user-images.githubusercontent.com/62164732/112615870-d78a0880-8e44-11eb-9db8-0d0fc3451aa0.png)
